@@ -1,0 +1,30 @@
+# Name: Justin Kim
+
+# Date: 1/29/19 Tuesday labs
+
+# Title: Lab4 – Notes
+
+# Description: Notes for Lab4
+
+Step 1: 
+
+When threadHello.c is run, the program launches 10 threads (threads 0-9), each printing the message "Hello from thread (thread number) with threadID (thread ID)" before printing "Thread (thread number) returned" and being terminated. When all threads terminate, the message "Main thread done" is printed. Running the program multiple times does not give the same results in terms of order in which the threads print their messages, the thread ID numbers, or the order in which the threads terminates, minus "Main thread done" being printed after every other message. 
+
+Running some other demanding processes doesn't seem to cause a difference in this case, even with multiple infinite while loops running.
+
+The variables are per-thread as arg is not affected by outside functions, being passed in by value rather than by reference. The complier stores these variable states in the stack. 
+
+Local variable i is per-thread, as each thread uses a different value of i not affected by any other thread, i being passed in by value rather than by reference. 
+The compiler stores local variable i in the stack. 
+
+
+Step 2: 
+
+The program can output the "Hello..." messages from the previous step but not guarantee that all `0 threads will print "Hello..." once, with the last thread printing twice and some not printing at all. It also can output "Main thread done" before all the threads have terminated. This is due to pthread_join() being removed so that the main thread will not wait on the other threads to terminate before ending itself. 
+
+Step 3: 
+
+The program required functions for generating the random inputs to populate the matrix, printing the matrix, the single-threaded multiplication, the multi-threaded multiplication, and checking the outputs of both matrix multiplication methods against each other. 
+The most basic task to perform was to edit the brackets for each [ i , j ] in the provided code to [i][j]. Some difficulty was encountered due to the mispelling of 'range' as 'rand' in irand() and the use of static type rather than int in the multi-threaded multiplication method. Additionally, due to memory constraints, only half of of the threads made to launch at a time. Instead of having a thread per row, each thread calculated the results of an entire column, reducing the needed number of threads from 2^20 to 2^10.
+
+

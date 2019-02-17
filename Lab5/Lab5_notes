@@ -1,0 +1,12 @@
+# Name: Justin Kim
+
+# Date: 2/5/19 Tuesday labs
+
+# Title: Lab4 – Notes
+
+# Description: Notes for Lab5
+
+Step 1: threadSync.c creates 10 threads, with one entering the critical section at a time and returning one by one, unlike threadHello.c, where all threads are running and returning simultaenously. There was no discernable order or number of threads entering and returning at any given time, save that it was not instantaneous like threadHello.c and fewer threads seemed to enter or return without another thread doing the other operation right afterwards. 
+
+Step 2: 
+Semaphores were used in order to account for the producer-consumer problem, so that an entry could only be consumed if the buffer is not empty. The buffer was an integer array and entries were randomly generated integers. A mutex was implemented using a semaphore so that only one consumer and one producer were running at any given point. Semaphores full (indicating number of entries) and empty (indicating number of empty spaces) were used to ensure the producers only produced when the buffer had space (full is not at the max buffer size, empty is not at 0) and the consumer only consumed when the buffer had entries (empty is not at the max buffer size, full is not at 0). Both producer and consumer threads needed a wraparound to keep the buffer acting more as a queue than as a stack. In order to simplify the problem, the consumer did not technically consume entries in the buffer but simply just outputted them and incremented the global consumer counter so that the next thread would not reread the same entry. The producer in turn would overwrite entries after wrapping around. The inclusion of an ampersand in pthread_join caused a segmentation fault issue. Once removed, the program ran without issue. 

@@ -1,0 +1,19 @@
+# Name: Justin Kim
+
+# Date: 1/22/19 Tuesday labs
+
+# Title: Lab3 – Notes
+
+# Description: Notes for Lab3
+
+Part 1,2:
+No editing was required for the initial 2 example file
+
+Part 3:
+This section dealt with the ls command being implemented in C. Replacing "write(fds[1],argv[i],strlen(argv[i])); from Part 2 with "up2(fds[1],1);" and "execlp("ls", "ls", 0);" allowed the program to run the 'ls' command successfully. Otherwise, no further editing was required. 
+
+Part 4:
+Similarly to Part 3, this section required the use of execlp() for both cat and grep to implement both commands in C. Some difficulty was encountered in the process of determining stdin and stdout when redirecting in both processes. After specifying the correct inputs for dup2 in both processes, the program ran successfully. 
+
+Part 5:
+This section was similar to Part 3, with addition of an additional process, which was mostly identical to the first process minus the absence of calling dup2() in the second, as that would wipe the previous process's outputs in the pipe. Some difficulties were encountered due to having dup2(fds[1],1) in the for loop for writing the message, calling it on every iteration and resulting in the strange symbols indicating that the text had possibly been corrupted. These issues were resolved by moving dup2(fds[1],1) out of the for loop. Trying to printf() the contents of the pipe also resulted in invalid outputs. This was resolved by using write(1,buff+i,1); as was done in previous parts instead. 

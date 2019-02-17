@@ -1,0 +1,25 @@
+# Name: Justin Kim
+
+# Date: 1/15/19 Tuesday labs
+
+# Title: Lab2 – Notes
+
+# Description: Notes for Lab2, concerning multi-processing and multi-threading. 
+
+- No editing was required for the initial example file. Lab_2_1.c compiled without error. 
+
+- When ./ExecutableName was run without an argument, there was a "Segmentation fault (core dumped)"
+
+- When ./ExecutableName was run with an argument, the program outputted "Parent process X" and "Child Process X", X being an integer counting the iterations of the processes from 0-99.
+
+	- The argument set the delay for the processes, with higher inputs giving longer delays in the outputting of the processes. For example, 5000 gives a far longer delay than 500. With the delay set low enough (i.e. 0), the parent and child processes did not take turns but instead had clumps where one process ran and then the other would catch up (so it'd output Parent Process 1, 2, 3, etc. and then Child Process 1, 2, 3, etc. instead of Parent Process 1, Child Process 1, Parent Process 2...)
+
+- For Part 5, considerable difficulty was had organising the order of forks and getpid returning 1, which was resolved by nesting identical if statements and adding a delay. Without a delay, a process with pid 1 would fork instead of the initial declared pid_t's. With inccorect if statement placement, the tree would be imbalanced, with some processes forking into 3 processes and others only 1. 
+
+- For Part 6, some difficulty was had with the syntax of threading, with a missing ampersand causing an error. Compiling the program required command than that of the others (gcc -pthread... rather than gcc...)
+
+- For Part 7, the process was mostly just a matter of copy-pasting. No major issues were encountered.
+
+
+
+
