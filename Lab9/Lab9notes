@@ -1,0 +1,13 @@
+# Name: Justin Kim
+
+# Date: 3/11/19 Tuesday labs
+
+# Title: Lab9 – Notes
+
+Step 1 recalled the steps taken in Lab 8 to read in files. 
+
+Step 2 expanded on Step 1 by adding a writing component. 
+
+Step 3 added an additional step of writing to a file from Step 2. This necessitates naming each file separately and uniquely so that they don't overwrite each other. 
+
+Step 4 added multithreading to Step 3. It suffered difficulties due to disk space, with the 64 thread 10000+ byte buffer run for the 100m file exceeding disk quotas and resulting in segmentation faults. This was resolved by adding a line to the shell file to erase all the resulting binary files created by step 4 after each set of threads. 
