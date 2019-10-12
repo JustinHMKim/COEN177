@@ -1,34 +1,53 @@
 "# COEN177" 
 
 Lab 2: Programming in C and use of Systems Calls
+       
         Objectives
+        
         1. To develop sample C programs
+        
         2. To develop programs with two or more processes using fork( ), exit( ), wait( ), and exec( ) system calls
+        
         3. To demonstrate the use of light weight processes - threads
         
 Lab assignment 3: Inter-process Communication – Pipes 
+        
         Objectives
+        
         1. To develop multi-process application programs
+        
         2. To demonstrate the use of pipes as an inter-process communication (IPC) mechanism
         
 Lab assignment 4: Threads and multi-threaded applications 
+        
         Objectives
+        
         1. To develop multi-threaded application programs
+        
         2. To demonstrate the use of threads in matrix multiplication
         
 Lab assignment 5: Synchronization using semaphores 
+        
         Objectives
+        
         1. To use semaphores for synchronization
+        
         2. To develop a C program to solve the producer – consumer problem
         
 Lab assignment 8: Memory Management 
+        
         Objectives
+        
         1. To simulate two kinds of basic page replacement algorithms
+        
         2. To evaluate the performance, in terms of miss/hit rate, of these algorithms
         
 Lab assignment 9: File Performance Measurement 
+        
         Objectives
+        
         1. To evaluate file system performance in the face of sequential I/O requests.
+        
         2. To evaluate the impact of multiple competing threads attempting to read/write simultaneously.
         
         
